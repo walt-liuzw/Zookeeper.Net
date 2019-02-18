@@ -36,8 +36,8 @@ namespace Sodao.Zookeeper
         /// <exception cref="ArgumentNullException">callback is null.</exception>
         public ChildrenWatcher(IZookClient zk, string path, Action<string[]> callback)
         {
-            if (zk == null) throw new ArgumentNullException("zk");
-            if (callback == null) throw new ArgumentNullException("callback");
+            if (zk == null) throw new ArgumentNullException(nameof(zk));
+            if (callback == null) throw new ArgumentNullException(nameof(callback));
 
             this._zk = zk;
             this._path = path;

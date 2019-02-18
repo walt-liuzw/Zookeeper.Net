@@ -18,8 +18,8 @@ namespace Sodao.Zookeeper
         /// <exception cref="ArgumentNullException">node is null.</exception>
         static public Task TryCreate(IZookClient zk, NodeInfo node)
         {
-            if (zk == null) throw new ArgumentNullException("zk");
-            if (node == null) throw new ArgumentNullException("node");
+            if (zk == null) throw new ArgumentNullException(nameof(zk));
+            if (node == null) throw new ArgumentNullException(nameof(node));
 
             return zk.Create(node.Path, node.Data, node.ACL, node.CreateMode).ContinueWith(c =>
             {
